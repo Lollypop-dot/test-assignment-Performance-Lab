@@ -12,9 +12,14 @@ import java.io.IOException;
 
 public class task3 {
     public static void main(String[] args) {
-        String testsFilePath = "src/task3/tests.json";
-        String valuesFilePath = "src/task3/values.json";
-        String outputFilePath = "src/task3/report.json";
+        if (args.length < 3) {
+            System.out.println("Недостаточно аргументов! Введите пути к файлам tests.json, values.json и report.json.");
+            return;
+        }
+
+        String testsFilePath = args[0];
+        String valuesFilePath = args[1];
+        String outputFilePath = args[2];
 
         try {
             // Чтение JSON из файла tests.json
